@@ -198,6 +198,13 @@ ALTER TABLE ONLY public.statistics
 -- Name: DATABASE "fast-food"; Type: ACL; Schema: -; Owner: postgres
 --
 
+-- The inner join function showcase
+
+SELECT * FROM location 
+INNER JOIN restaurants ON restaurants.restaurantsid = location.restaurantsid
+INNER JOIN menu ON  menu.restaurantsid = restaurants.restaurantsid
+INNER JOIN statistics ON statistics.restaurantsid = restaurants.restaurantsid;
+
 GRANT TEMPORARY ON DATABASE "fast-food" TO me;
 
 
